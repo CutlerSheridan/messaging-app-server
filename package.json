@@ -1,0 +1,19 @@
+{
+  "name": "messaging-app-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=appName:* && npm run devstart"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.6",
+    "debug": "~4.3.4",
+    "express": "~4.19.2",
+    "express-async-handler": "^1.2.0",
+    "http-errors": "~2.0.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.10.0"
+  }
+}
