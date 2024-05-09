@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes.router);
+app.use('/auth', routes.auth);
 app.use('/users', routes.users);
 
 // catch 404 and forward to error handler

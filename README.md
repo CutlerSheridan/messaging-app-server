@@ -22,6 +22,12 @@ Client-side repo is [here](https://github.com/CutlerSheridan/messaging-app-clien
 
 #### DONE
 
+_0.0.2_
+
+- add passport login logic
+- build auth.js
+- reduce index.js to pure routing
+
 _0.0.1_
 
 - shift app startup control to app.js

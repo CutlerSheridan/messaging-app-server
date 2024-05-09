@@ -24,6 +24,25 @@ passport.use(
 );
 
 passport.use(
+  'login',
+  new localStrategy(async (username, password, done) => {
+    try {
+      const user = await userController.findOne({ username });
+      if (!user) {
+        return done(null, false, { message: 'User not found' });
+      }
+      if (await userController.isCorrectPassword(user, password)) {
+        return done(null, user, { message: 'Logged in successfully' });
+      } else {
+        return done(null, false, { message: 'Incorrect password' });
+      }
+    } catch (err) {
+      return done(err);
+    }
+  })
+);
+
+passport.use(
   new JWTstrategy(
     {
       secretOrKey: process.env.JWT_KEY,
