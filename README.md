@@ -8,6 +8,8 @@ Client-side repo is [here](https://github.com/CutlerSheridan/messaging-app-clien
 
 #### TODO NEXT
 
+- build passport_config
+
 #### TODO LATER
 
 ##### Features
@@ -19,6 +21,14 @@ Client-side repo is [here](https://github.com/CutlerSheridan/messaging-app-clien
 - add credit
 
 #### DONE
+
+_0.0.1_
+
+- shift app startup control to app.js
+- remove unnecessary dependencies
+- build User
+- build userController
+- build passport_config
 
 _0.0.0_
 
