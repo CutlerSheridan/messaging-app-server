@@ -10,7 +10,7 @@ const saveToDB = async (user) => {
     if (!userExists) {
       const hashedPassword = await bcrypt.hash(user.password, 10);
       user.password = hashedPassword;
-      await db.collection('users').insertOne('user');
+      await db.collection('users').insertOne(user);
       return user;
     }
     return null;
@@ -36,6 +36,6 @@ const findOne = async (searchFields) => {
 
 module.exports = {
   saveToDB,
-  isValidPassword,
+  isCorrectPassword,
   findOne,
 };

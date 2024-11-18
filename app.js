@@ -1,5 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
 
@@ -7,12 +8,13 @@ const routes = require('./routes/index');
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/auth', routes.auth);
-app.use('/users', routes.users);
+app.use('api/1/auth', routes.auth);
+app.use('api/1/users', routes.users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -27,7 +29,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json(`error ${err.status}: ${err.message}`);
 });
 
 const port = process.env.PORT || 3000;

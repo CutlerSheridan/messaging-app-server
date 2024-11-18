@@ -8,7 +8,7 @@ Client-side repo is [here](https://github.com/CutlerSheridan/messaging-app-clien
 
 #### TODO NEXT
 
-- build passport_config
+- figure out why signup attempts return 'not found'
 
 #### TODO LATER
 
@@ -22,9 +22,16 @@ Client-side repo is [here](https://github.com/CutlerSheridan/messaging-app-clien
 
 #### DONE
 
+_0.1.0_
+
+- write signup auth logic
+- fix userController.saveToDB() inserting the string 'user' instead of the actual user
+- add cors to app.js
+
 _0.0.2_
 
 - add passport login logic
+- add passport signup logic
 - build auth.js
 - reduce index.js to pure routing
 

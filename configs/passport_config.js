@@ -49,7 +49,6 @@ passport.use(
       jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     },
     async (token, done) => {
-      debug('token at start: ', token);
       try {
         const user = await userController.findOne({
           _id: new ObjectId(token._id),

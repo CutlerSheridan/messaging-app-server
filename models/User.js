@@ -21,4 +21,4 @@ const User = (userObj) => {
   return user;
 };
 
-module.exports = user;
+module.exports = User;
